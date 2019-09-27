@@ -1,0 +1,44 @@
+<div class ="card">
+  <div class="card-header">
+    Players
+  </div>
+  <div class="card-body">
+    <div class="row">
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table" *ngIf='players && players.length'>
+        <thead>
+        <tr>
+          <th>
+            Id
+          </th>
+          <th>
+            Name
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor='let player of players'>
+          <td>{{ player.id }} </td>
+          <td>{{ player.name | lowercase}} </td>
+          <!--<td>{{ player.points }} </td>-->
+          <!--<td>
+            <img
+              [src]='game.imgUrl'
+              [style.width.px]='25'
+              [style.margin.px]='25'
+            />
+          </td>-->
+        </tr>
+
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+</div>

@@ -7,7 +7,7 @@ import {catchError} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class GameService {
+export class GamesListService {
 
   private apiUrl = 'http://localhost:8081/api/sso/hello';
 
@@ -18,7 +18,7 @@ export class GameService {
   constructor(private httpClient: HttpClient) {
 
   }
-  getHame(): Observable<IGame[]> {
+  getGame(): Observable<IGame[]> {
     return this.httpClient.get<IGame[]>(this.apiUrl).pipe(
       catchError(this.handleError)
     );

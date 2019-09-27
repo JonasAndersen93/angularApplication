@@ -1,13 +1,13 @@
 import { Component, OnInit} from '@angular/core';
 import {IGame} from './game';
-import {GameService} from './game.service';
+import {GamesListService} from './games-list.service';
 
 @Component({
   selector: 'app-games',
-  templateUrl: './games.component.html',
-  styleUrls: ['./games.component.css']
+  templateUrl: './games-list.component.html',
+  styleUrls: ['./games-list.component.css']
 })
-export class GamesComponent implements OnInit {
+export class GamesListComponent implements OnInit {
 
   filtered : string = '';
   sayHello: boolean = false;
@@ -26,10 +26,10 @@ export class GamesComponent implements OnInit {
     this.sayHello = !this.sayHello;
   }
 
-  constructor(private gameService : GameService) { }
+  constructor(private gameService : GamesListService) { }
 
   ngOnInit() {
-    this.gameService.getHame().subscribe({
+    this.gameService.getGame().subscribe({
       next: games => this.games = games,
       error: err => this.errorMessage = err
       }

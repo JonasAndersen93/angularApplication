@@ -8,3 +8,5 @@ RUN npm run build --prod
 #stage 2
 FROM nginx:alpine
 COPY --from=node /app/dist/angularApplication /usr/share/nginx/html/
+
+ENV API_URL=http://localhost:8081
