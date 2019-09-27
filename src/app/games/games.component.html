@@ -1,0 +1,56 @@
+<div class ="card">
+  <div class="card-header">
+    Games
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-2">Filter by: </div>
+      <div class="col-md-4">
+        <input type="text" [(ngModel)]="filtered"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Filtered by: {{filtered}}</h4>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table" *ngIf='games && games.length'>
+        <thead>
+          <tr>
+            <th>
+              Id
+            </th>
+            <th>
+              Name
+            </th>
+            <th>
+              Logo
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor='let game of games'>
+          <td>{{ game.id }} </td>
+          <td>{{ game.gameName | lowercase}} </td>
+          <!--<td>
+            <img
+              [src]='game.imgUrl'
+              [style.width.px]='25'
+              [style.margin.px]='25'
+            />
+          </td>-->
+          <td></td>
+        </tr>
+
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" (click)="toggleButton()">
+    Vis navn
+  </button>
+  <div *ngIf='sayHello'>Jonas Andersen</div>
+</div>
