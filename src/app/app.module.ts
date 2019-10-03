@@ -3,26 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoursesComponent } from './courses/courses.component';
-import { CourseComponent } from './course/course.component';
-import {CoursesService} from './courses/courses.service';
-import { GameComponent } from './game/game.component';
 import { GamesListService } from './games-list/games-list.service';
-import { GamesListComponent } from './games-list/games-list.component';
 import {FormsModule, NgForm} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
-import { PlayerComponent } from './player/player.component';
-import {PlayerListService} from './player-list/player-list.service';
+import { AddPlayerComponent } from './players/add-player/add-player.component';
+import {PlayerService} from './players/player.service';
+import { PlayerDetailComponent } from './players/player-detail/player-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoursesComponent,
-    CourseComponent,
-    GameComponent,
-    PlayerComponent,
-    routingComponents
+    AddPlayerComponent,
+    routingComponents,
+    PlayerDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +25,8 @@ import {PlayerListService} from './player-list/player-list.service';
     HttpClientModule
   ],
   providers: [
-    CoursesService,
     GamesListService,
-    PlayerListService
+    PlayerService
   ],
   bootstrap: [AppComponent]
 })

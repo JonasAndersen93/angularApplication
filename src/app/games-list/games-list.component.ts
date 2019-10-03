@@ -29,7 +29,7 @@ export class GamesListComponent implements OnInit {
   constructor(private gameService : GamesListService) { }
 
   ngOnInit() {
-    this.gameService.getGame().subscribe({
+    this.gameService.getGames().subscribe({
       next: games => this.games = games,
       error: err => this.errorMessage = err
       }

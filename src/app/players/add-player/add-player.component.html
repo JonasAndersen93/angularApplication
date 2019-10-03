@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <h1>Add Player form</h1>
+  <form class="form-inline" #addPlayerModel="ngForm">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Name: </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="name" [(ngModel)]="player.name" #name>
+        <button class="btn btn-primary" (click)="add(player.name); player.name='test'">
+          Add Player
+        </button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+  </form>
+  {{name.className}}
+  <hr />
+  {{ addPlayerModel.value | json}}
+  <hr />
+  {{ player | json}}
+</div>

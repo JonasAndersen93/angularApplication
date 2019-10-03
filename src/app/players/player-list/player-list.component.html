@@ -22,7 +22,13 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor='let player of players'>
+        <!--<tr *ngFor='let player of players' (click)="showPlayerDetail(player)">-->
+          <!-- man kunne tilsvarende have brugt
+         <tr *ngFor='let player of players' <a [routerLink]= "['/players', player.id]">
+          -->
+        <tr *ngFor='let player of players' [routerLink]= "['/players', player.id]">
+
+
           <td>{{ player.id }} </td>
           <td>{{ player.name | lowercase}} </td>
           <!--<td>{{ player.points }} </td>-->
@@ -33,6 +39,7 @@
               [style.margin.px]='25'
             />
           </td>-->
+
         </tr>
 
         </tbody>
@@ -40,5 +47,9 @@
       </table>
     </div>
   </div>
+  <button class="btn btn-primary" routerLink="/add-players">
+    Add Players
+  </button>
 
 </div>
+<!--<app-player></app-player>-->

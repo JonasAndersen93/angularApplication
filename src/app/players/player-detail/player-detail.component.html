@@ -1,0 +1,8 @@
+<div *ngIf="player$ | async as player">
+
+  <h3>Player Info</h3>
+  <span>{{ player.name }} </span>
+  <hr />
+
+  <button type="button" class="btn btn-danger" (click)="gotoPlayers()">Back</button>
+</div>
