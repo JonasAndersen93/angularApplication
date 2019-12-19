@@ -3,12 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GamesListService } from './games-list/games-list.service';
+import { GamesService } from './games/games.service';
 import {FormsModule, NgForm} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { AddPlayerComponent } from './players/add-player/add-player.component';
 import {PlayerService} from './players/player.service';
 import { PlayerDetailComponent } from './players/player-detail/player-detail.component';
+import { GameDetailComponent } from './games/game-detail/game-detail.component';
+import { PlayerImageComponent } from './players/player-image/player-image.component';
 
 
 @NgModule({
@@ -16,7 +18,7 @@ import { PlayerDetailComponent } from './players/player-detail/player-detail.com
     AppComponent,
     AddPlayerComponent,
     routingComponents,
-    PlayerDetailComponent
+    PlayerImageComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,7 @@ import { PlayerDetailComponent } from './players/player-detail/player-detail.com
     HttpClientModule
   ],
   providers: [
-    GamesListService,
+    GamesService,
     PlayerService
   ],
   bootstrap: [AppComponent]

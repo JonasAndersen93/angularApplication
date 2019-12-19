@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="table-responsive">
-      <table class="table" *ngIf='games && games.length'>
+      <table class="table" *ngIf='games && games.length' >
         <thead>
           <tr>
             <th>
@@ -30,7 +30,7 @@
           </tr>
         </thead>
         <tbody>
-        <tr *ngFor='let game of games'>
+        <tr class="game-entity" *ngFor='let game of games' [routerLink]= "['/games', game.id]">
           <td>{{ game.id }} </td>
           <td>{{ game.gameName | lowercase}} </td>
           <!--<td>

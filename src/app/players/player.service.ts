@@ -3,7 +3,7 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {IPlayer} from './playerInterface';
-import {IGame} from '../games-list/game';
+import {IGame} from '../games/game';
 import {Player} from './players';
 
 @Injectable({

@@ -13,6 +13,7 @@ import {switchMap} from 'rxjs/operators';
 export class PlayerDetailComponent implements OnInit {
 
   player$: Observable<IPlayer>;
+  parentParam : boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private playerService: PlayerService) { }
 
