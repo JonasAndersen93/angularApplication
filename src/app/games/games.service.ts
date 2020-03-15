@@ -9,7 +9,7 @@ import {catchError, map} from 'rxjs/operators';
 })
 export class GamesService {
 
-  private apiUrl = 'http://localhost:8081/api/';
+  private apiUrl = 'http://localhost:8081/api/keycloak/';
 
 /*getGame(): IGame[]{
     return;

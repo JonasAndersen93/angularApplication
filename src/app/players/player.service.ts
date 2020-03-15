@@ -10,8 +10,8 @@ import {Player} from './players';
   providedIn: 'root'
 })
 export class PlayerService {
-  private apiUrl = 'http://localhost:8081/api/players';
-  private postOurl = 'http://localhost:8081/api/player/add';
+  private apiUrl = 'http://localhost:8081/api/keycloak/players';
+  private postOurl = 'http://localhost:8081/api/keycloak/player/add';
 
   constructor(private httpClient: HttpClient) { }
 
