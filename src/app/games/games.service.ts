@@ -3,19 +3,22 @@ import {HttpClient, HttpErrorResponse, HttpParams} from '@angular/common/http';
 import {IGame} from './game';
 import {Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
+import {AppConfig} from '../app.config';
+import {KeycloakService} from '../keycloak/keycloak.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GamesService {
 
-  private apiUrl = 'http://localhost:8081/api/keycloak/';
+  //private apiUrl = 'http://localhost:8088/api/keycloak/';
+  private apiUrl = AppConfig.settings.api.HOST_BACKEND_API+'/api/keycloak/';
 
 /*getGame(): IGame[]{
     return;
 }*/
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient, private keycloakService: KeycloakService) {
 
   }
   getGames(): Observable<IGame[]> {

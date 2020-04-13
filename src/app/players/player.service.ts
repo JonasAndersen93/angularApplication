@@ -5,13 +5,16 @@ import {catchError, map} from 'rxjs/operators';
 import {IPlayer} from './playerInterface';
 import {IGame} from '../games/game';
 import {Player} from './players';
+import {AppConfig} from '../app.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlayerService {
-  private apiUrl = 'http://localhost:8081/api/keycloak/players';
-  private postOurl = 'http://localhost:8081/api/keycloak/player/add';
+  /*private apiUrl = 'http://localhost:8088/api/keycloak/players';
+  private postOurl = 'http://localhost:8088/api/keycloak/player/add';*/
+  private apiUrl = AppConfig.settings.api.HOST_BACKEND_API+'/api/keycloak/players';
+  private postOurl = AppConfig.settings.api.HOST_BACKEND_API+'/api/keycloak/players/add';
 
   constructor(private httpClient: HttpClient) { }
 

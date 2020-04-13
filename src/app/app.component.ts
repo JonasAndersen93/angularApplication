@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {KeycloakService} from './keycloak/keycloak.service';
+import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -6,7 +8,13 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit{
 
-  ngOnInit(){
+  constructor(private activatedRoute: ActivatedRoute, private keycloakService: KeycloakService){
 
+  }
+  ngOnInit() {
+
+  }
+  public isAdmin(): boolean {
+    return this.keycloakService.hasAnyRole(['api']);
   }
 }
